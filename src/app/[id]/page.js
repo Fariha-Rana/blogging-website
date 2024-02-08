@@ -21,19 +21,21 @@ export default async function BlogPost({ params: { id } }) {
         />
       </div>
       <div className="text-sm lg:text-xl flex flex-col items-center space-y-0 md:space-y-0 md:space-x-4">
-        <span className="text-md text-gray-600">
+        <span className="text-md text-gray-600 ">
           <b>Published Date:</b> {postsData.otherMetadata.date}
         </span>
-        <span className=" flex flex-row py-8 text-md text-gray-600 ">
+        <div className=" flex flex-row py-8 text-md text-gray-600 items-center justify-center">
+        <span className=" ">
           <b>Author:</b> {postsData.otherMetadata.Author}
+        </span>
         <Image
           src={`/${postsData.otherMetadata.AuthorImage}`}
           alt="Author"
           width={60}
           height={60}
-          className="ml-6 rounded-full h-auto"
+          className="ml-6 rounded-full h-16 w-16"
         />
-        </span>
+        </div>
         <span className=" text-md sm:text-lg md:text-lg lg:text:lg font-thin">
           <b> Save this blog </b>
           <Button postId={id} postsData={metaData} />

@@ -1,4 +1,3 @@
-// "use client"
 import { Databases, ID, Query } from "appwrite";
 import { client } from "./appwriteConfig";
 require("dotenv").config();
