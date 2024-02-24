@@ -11,29 +11,24 @@ export default async function BlogPost({ params: { id } }) {
         {postsData.otherMetadata.title}
       </h1>
       <div className="mb-8">
-        <Image
+        <img
           src={`/${postsData.otherMetadata.BackgroundImage}`}
           alt="poster"
-          width={2500}
-          height={2500}
-          // layout="responsive"
-          className="rounded h-auto"
+          className="rounded h-auto w-auto"
         />
       </div>
-      <div className="text-sm lg:text-xl flex flex-col items-center space-y-0 md:space-y-0 md:space-x-4">
+      <div className="text-sm lg:text-xl flex flex-col items-center gap-6 space-y-0 md:space-y-0 md:space-x-4">
         <span className="text-md text-gray-600 ">
           <b>Published Date:</b> {postsData.otherMetadata.date}
         </span>
-        <div className=" flex flex-row py-8 text-md text-gray-600 items-center justify-center">
+        <div className=" flex gap-4 text-md text-gray-600 items-center justify-center">
         <span className=" ">
           <b>Author:</b> {postsData.otherMetadata.Author}
         </span>
-        <Image
+        <img
           src={`/${postsData.otherMetadata.AuthorImage}`}
           alt="Author"
-          width={60}
-          height={60}
-          className="ml-6 rounded-full h-16 w-16"
+          className="rounded-full h-16 w-16"
         />
         </div>
         <span className=" text-md sm:text-lg md:text-lg lg:text:lg font-thin">

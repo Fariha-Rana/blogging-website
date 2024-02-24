@@ -13,13 +13,9 @@ export default function BlogList() {
         {posts.map(({ id, title, BackgroundImage }) => (
           <div key={id} className="p-4 mb-4 shadow-lg rounded-lg bg-gradient-to-r from-neutral-200 to-stone-100">
             <div className="m-6 rounded-md overflow-hidden flex items-center object-cover">
-              <Image
-                priority
+              <img
                 src={`/${BackgroundImage}`}
                 alt={BackgroundImage}
-                width={300}
-                height={300}
-                // layout="responsive"
                 sizes="(max-width: 640px) 80vw, 300px"
                 style={{
                   width: "100%",

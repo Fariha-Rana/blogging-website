@@ -64,12 +64,10 @@ const ProfileCard = () => {
                 <li key={index} className="mb-4 pb-5">
                   <div className="mb-4 shadow-lg rounded-lg overflow-hidden">
                     <div className="relative h-auto">
-                      <Image
-                        className="object-cover w-full h-full"
+                      <img
+                        className="object-cover"
                         src={`/${post.imageurl}`}
                         alt="poster"
-                        width={400}
-                        height={100}
                         style={{
                           width: "100%",
                           height: "auto",
