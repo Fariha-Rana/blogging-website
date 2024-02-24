@@ -1,4 +1,4 @@
-website-link https://blogging-website-24rr.vercel.app/
+website-link [https://blogging-website-24rr.vercel.app/]
 # About the Project
 
 This project is a blogging web application built with Next.js, tailwind and Appwrite for database and authentication. 
