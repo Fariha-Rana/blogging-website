@@ -10,7 +10,7 @@ export default async function BlogPost({ params: { id } }) {
       <h1 className="text-xl lg:text-5xl md:text-3xl sm:text-2xl font-bold m-4 p-4 text-center bg-gradient-to-r from-gray-600 to-cyan-600 bg-clip-text text-transparent">
         {postsData.otherMetadata.title}
       </h1>
-      <div className="mb-8">
+      <div className="mb-8 flex justify-center items-center">
         <img
           src={`/${postsData.otherMetadata.BackgroundImage}`}
           alt="poster"
