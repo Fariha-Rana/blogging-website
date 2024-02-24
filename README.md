@@ -1,9 +1,10 @@
-website-link https://blogging-website-24rr.vercel.app/
-# About the Project
+# website-link = [https://blogging-website-24rr.vercel.app/]
+
+## About the Project
 
 This project is a blogging web application built with Next.js, tailwind and Appwrite for database and authentication. 
 
-# Usage
+## Usage
 
 1. To use this project, you'll need to have Node.js and pnpm installed.
 2. You will need Appwrite access keys and ids. check .env.example file save them.
