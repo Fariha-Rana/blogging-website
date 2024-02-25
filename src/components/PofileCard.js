@@ -11,10 +11,14 @@ const ProfileCard = () => {
   const [loadingStates, setLoadingStates] = useState({});
 
   async function deletePost(postId) {
-    setLoadingStates((prevStates) => ({ ...prevStates, [postId]: true }));
-    await _deleteDocument(postId, user.$id);
-    await fetchData();
-    setLoadingStates((prevStates) => ({ ...prevStates, [postId]: false }));
+    try {
+      setLoadingStates((prevStates) => ({ ...prevStates, [postId]: true }));
+      await _deleteDocument(postId, user.$id);
+      await fetchData();
+      setLoadingStates((prevStates) => ({ ...prevStates, [postId]: false }));
+    } catch (error) {
+      setLoadingStates((prevStates) => ({ ...prevStates, [postId]: false }));
+    }
   }
 
   const fetchData = async () => {
@@ -22,16 +26,19 @@ const ProfileCard = () => {
       const userData = await appwriteAuth.getCurrentUser();
       if (userData) {
         setUser(userData);
-        const _savedPosts = await _listDocument(userData.$id);
-        setSavedPosts(_savedPosts.documents);
+        const _savedPosts = await _listDocument(userData?.$id);
+        setSavedPosts(_savedPosts?.documents);
       }
     } catch (err) {
       console.log(err);
+      throw err;
     }
   };
 
   useEffect(() => {
-    fetchData();
+    try {
+      fetchData();
+    } catch (error) {}
   }, []);
 
   return (
@@ -58,7 +65,7 @@ const ProfileCard = () => {
           </div>
         </div>
         <div className="mt-4 text-center">
-          {savedPosts && savedPosts.length > 0 ? (
+          {savedPosts?.length > 0 ? (
             <ul>
               {savedPosts.map((post, index) => (
                 <li key={index} className="mb-4 pb-5">
